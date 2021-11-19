@@ -1,0 +1,22 @@
+
+how to get trust-wallet-private-key:
+https://adaascapital.com/trust-wallet-private-key/
+
+- wallet_address: your bnb wallet address
+- private_key; in trustwallet
+    - copy your recovery phrase (memonics  should be 12 words)
+    - visit https://adaascapital.com/trust-wallet-private-key/
+    - pace in your recovery phrase, and select coin Ethereum
+    - scroll down, on the first line showing addresses copy second column (your wallet address) and copy third column
+        (thats your private_key)
+
+TODO:
+    - infos to entries
+    . backgraound color
+    - show and explain error messages
+    - print bot start message in log
+
+TODO LATER:
+    - sell options
+    - change between only_buy_bot , try_until_you_can_buy_bot, get_new_token_and_buy_bot
+    - each bot has sell enable function
