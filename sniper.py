@@ -25,8 +25,7 @@ wbnb = web3.toChecksumAddress('0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c')   #W
 #0xf52F06A2d813c7E2E2Cc52F5128741186a03E563 my wbnb
 sender_address = web3.toChecksumAddress('0xf52F06A2d813c7E2E2Cc52F5128741186a03E563') #the address which buys the token
 privateKey = '0xf2ef96562cc67ea73e413a1c3c9ea8cec7c3a33665c13a912fc9811d3bd9c839'
-# 0xbc45EDd4b1D3bC9AA665232055cbdDAE64Ef503e
-# tokenToBuy = web3.toChecksumAddress('0x899559c7151ddc01Fc084341B36101EAC1B6C01B')
+# 0xCF9f991b14620f5ad144Eec11f9bc7Bf08987622
 
 # Get BNB Balance
 balance = web3.eth.get_balance(sender_address)

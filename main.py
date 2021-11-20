@@ -1,5 +1,6 @@
 from tkinter import *
 from buysniper import BuySniper
+from sellsniper import SellSniper
 
 
 class EntryApp(object):
@@ -48,14 +49,12 @@ class EntryApp(object):
         start_bot_button = Button(self.entry_frame, text="Start Bot", command=self.start_bot_command)
         start_bot_button.grid(row=5, column=1)
 
-        self.list_box = Listbox(self.list_box_frame, width=90, height=30)
+        self.list_box = Listbox(self.list_box_frame, width=90, height=25)
         self.list_box.grid(row=7, column=1)
 
     def update_listbox(self, data: str):
         self.list_box.insert(END, "=================================================================")
         self.list_box.insert(END, data)
-        self.list_box.insert(END, " ")
-
 
     def start_bot_command(self,):
         wallet_address = self.entry1.get()
@@ -68,23 +67,13 @@ class EntryApp(object):
 
         gas_price = self.entry5.get()
 
-        self.entry1.delete(0, END)
-        self.entry2.delete(0, END)
-        self.entry3.delete(0, END)
-        self.entry4.delete(0, END)
-        self.entry5.delete(0, END)
-
-        print(wallet_address)
-        print(private_key)
-        print(token_to_buy)
-        print(quantity)
-        print(gas_price)
-
-        BuySniper(wallet_address, private_key, token_to_buy, quantity, gas_price, self)
+        # BuySniper(wallet_address, private_key, token_to_buy, quantity, gas_price, self)
+        SellSniper(wallet_address, private_key, token_to_buy, quantity, gas_price, self)
 
 
-root = Tk()
-root.title("Sniper Bot")
-root.geometry("800x800")
-app = EntryApp(root)
-root.mainloop()
+if __name__ == '__main__':
+    root = Tk()
+    root.title("Sniper Bot")
+    root.geometry("800x800")
+    app = EntryApp(root)
+    root.mainloop()

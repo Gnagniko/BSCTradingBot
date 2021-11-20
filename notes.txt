@@ -14,7 +14,9 @@ TODO:
     - infos to entries
     . backgraound color
     - show and explain error messages
-    - print bot start message in log
+    - print bot start message to log
+    - show amount of owned token and bnb to log
+
 
 TODO LATER:
     - sell options
