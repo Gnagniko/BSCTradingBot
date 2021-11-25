@@ -22,3 +22,12 @@ TODO LATER:
     - sell options
     - change between only_buy_bot , try_until_you_can_buy_bot, get_new_token_and_buy_bot
     - each bot has sell enable function
+
+- After approvement need to wait 10 second
+Error explaination:
+    - TRANSFER_FROM_FAILED:
+        - can mean that your not have enough balance in your account to buy this token
+    - 'code': -32000, 'message': 'replacement transaction underpriced':
+        - can mean that one transaction was successful but not fully ended, and you are trying to make another
+            and your balance isn't enough because of the first on
+        - sometimes you just need to redo the transaction
