@@ -12,16 +12,17 @@ https://adaascapital.com/trust-wallet-private-key/
 
 TODO:
     - infos to entries
-    . backgraound color
     - show and explain error messages
-    - print bot start message to log
     - show amount of owned token and bnb to log
+    - pop up window to verify if the user really want to close the app when clicking on X button
+    - check if token is already aproved
+    - add config file to save pk and wa
 
 
 TODO LATER:
-    - sell options
-    - change between only_buy_bot , try_until_you_can_buy_bot, get_new_token_and_buy_bot
-    - each bot has sell enable function
+    - stop loss and take profit seperat not both in one and if one of them set to -1 means sell all tokens
+    - check if liquidity is locked
+    - check on scanner webpage staysafu
 
 - After approvement need to wait 10 second
 Error explaination:
@@ -31,3 +32,6 @@ Error explaination:
         - can mean that one transaction was successful but not fully ended, and you are trying to make another
             and your balance isn't enough because of the first on
         - sometimes you just need to redo the transaction
+
+
+
