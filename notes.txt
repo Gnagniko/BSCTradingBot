@@ -11,12 +11,14 @@ https://adaascapital.com/trust-wallet-private-key/
         (thats your private_key)
 
 TODO:
+    - x button onclick close all threads
     - infos to entries
     - show and explain error messages
     - show amount of owned token and bnb to log
     - pop up window to verify if the user really want to close the app when clicking on X button
     - check if token is already aproved
     - add config file to save pk and wa
+    - print errors made by instatiating Buy and Sell Objects
 
 
 TODO LATER:

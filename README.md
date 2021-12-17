@@ -24,6 +24,7 @@ inputs:
   - Take profit: Value must be greater than 1. It's a win limit, at which you want to sell the Token (example: 2 means sell token after you made 2x) 
   - Stop loss: Value must be between [0, 1[. It's a loss limit, at which you want to sell the token (example: 0.2 means sell token after value 
     goes down by 20 %)
+  - Sell Quantity: value must be between [0, 1] example: 0.2 means sell 20 % of token if limit( take profit, stop loss) reached 
 
 Functionality: Buys a given token after liquidity is added and sells the token under following conditions.
   - If take profit and stop loss are set to -1: Means none of both limits is set and Bot will sell token after 35 seconds 

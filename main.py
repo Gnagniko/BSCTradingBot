@@ -10,7 +10,7 @@ if __name__ == '__main__':
     root = Tk()
     root.title("BSCSniper")
     root.geometry("1129x800")
-    root.resizable(0, 0)
+    # root.resizable(0, 0)
 
     # Frames
     entries_frame = Frame(root, width=800, height=800, bg=BG_COLOR)

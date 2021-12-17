@@ -44,6 +44,10 @@ class Sell:
         # each need to be handle differently)
         self.decimals = self.sellTokenContract.functions.decimals().call()
         print(self.decimals)
+
+        #self.tax_fee = self.sellTokenContract
+        #print(self.tax_fee)
+
         self.TradingTokenDecimal = decimalData.getTokenDecimal(int(self.decimals))
 
         self.symbol = self.sellTokenContract.functions.symbol().call()
@@ -134,6 +138,12 @@ class Sell:
             self.logger.log(level, str(e))
 
 
-
+sell = Sell("0xf52F06A2d813c7E2E2Cc52F5128741186a03E563",
+            "0xf2ef96562cc67ea73e413a1c3c9ea8cec7c3a33665c13a912fc9811d3bd9c839",
+            "0x355F26499B77e29e83cFeAC2ECa06059D881E8D2",
+            0.001,
+            1000000,
+            "5",
+            None)
 
 
