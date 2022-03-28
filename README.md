@@ -1,23 +1,27 @@
-# BSCSniper
+# Binance Smart Chain TradingBot
 
+## About The Project
+BSCTradingBot consists of 3 Bots Automated, Buy and Sell. 
+
+Requirements:
+  - Bot only works for bsc tokens on pancakeswap 
+  - Your need to have some wbnb in your wallet to use this bot
+  
 ## Getting Started
-When you download the BSCSniper, you will find a config.json file. This is where you need to add the following data.
+When you download the BSCTradingBot, you will find a config.json file. This is where you need to add the following data.
   - Wallet Address: your BSC wallet address (e.g., Metamask)
   - Private Key: your private key of your wallet address in hex, not the mnemonic phrase 
   - Gas amount: amount of max gas to use per transaction. Recommended to leave at default.
   - Gasprice: max price of gas to use per transaction. Recommended to leave at default.
 
-To start BSCSniper double-click on main.exe file. 
+To start BSCTradingBot double-click on main.exe file. 
 
-## About The Project
-BSCSniper consists of 3 Bots Snipe, Buy and Sell. 
-One can switch between Snipe and Buy but Sell Bot is always enabled.
 
-Requirements:
-  - Bot only works for bsc tokens on pancakeswap 
-  - Your need to have some wbnb in your wallet to use this bot
+### Automated Bot: 
+Functionality: It listens to a telegram channel to get new tokens published on coinmarketcap.
+              Buys a token and monitors the price. 
+              After setted conditions are reached it sells the token.
 
-### Snipe Bot: 
 inputs:
   - Token to buy address: The contract address of the token you want to snipe
   - Quantity: Amount of BNB you want to use for the trade (example: 0.02 means you want to buy the token for 0.02 BNB)
@@ -25,26 +29,22 @@ inputs:
   - Stop loss: Value must be between [0, 1[. It's a loss limit, at which you want to sell the token (example: 0.2 means sell token after value 
     goes down by 20 %)
   - Sell Quantity: value must be between [0, 1] example: 0.2 means sell 20 % of token if limit( take profit, stop loss) reached 
-
-Functionality: Buys a given token after liquidity is added and sells the token under following conditions.
-  - If take profit and stop loss are set to -1: Means none of both limits is set and Bot will sell token after 35 seconds 
-  - If take profit is set and stop loss is set to -1: Bot will sell token after take profit limit is reached
-  - If take profit = -1 and stop loss set: Bot will sell token after stop loss limit is reached 
-  - If take profit and stop loss are both set: Bot will sell token after one of the limits is reached
+  
 
 ### Buy Bot:
+Functionality: This Bot only buys once and does not sell.
+
 inputs:
   - Token to buy address: The contract address of the token you want to buy
   - Quantity: Amount of BNB you want to use for the trade (example: 0.02 means you want to buy the token for 0.02 BNB)
 
-Functionality: This Bot only buys once and does not sell.
 
 ### Sell Bot:
+Functionality: This Bot only sell once.
+
 inputs:
   - Token to sell address: The contract address of the token you want to sell
   - Quantity of token in %: Percentage of the total balance you want to sell (example: 0.2 means you want to sell 20% of total balance)
-
-Functionality: This Bot only sell once.
 
 ## Common errors and how to fix them
   - ValueError: {'code': -32000, 'message': '(replacement) transaction underpriced'}: You are using too low gas. Increase gas price / limit and restart. 
