@@ -1,19 +1,21 @@
 import logging
 import queue
-from datetime import datetime
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText
-from graphical_UIs.queueHandler import QueueHandler
-from styling import *
+from utils.queueHandler import QueueHandler
+from utils.styling import *
 
-
+"""
+    This Class is responsible for polling
+    messages from a logging queue and to display them in a scrolled text widget and errorLog file
+"""
 class ConsoleUi(object):
-    """Poll messages from a logging queue and display them in a scrolled text widget"""
-
     def __init__(self, frame, logger):
         self.frame = frame
+        self.logger = logger
+
         # Create a ScrolledText widget
-        self.scrolled_text = ScrolledText(frame, state='disabled', height=35, width=140, bg=BG_COLOR)
+        self.scrolled_text = ScrolledText(frame, state='disabled', height=30, width=100, bg=BG_COLOR)
         self.scrolled_text.grid(row=0, column=0, sticky=(N, S, W, E))
         self.scrolled_text.configure(font='TkFixedFont')
 
@@ -25,12 +27,19 @@ class ConsoleUi(object):
         self.scrolled_text.tag_config('WARNING', foreground='green')
         self.scrolled_text.tag_config('ERROR', foreground='red')
         self.scrolled_text.tag_config('CRITICAL', foreground='orange')
+
+        # Create a file handler
+        formatter = logging.Formatter('%(asctime)s: %(message)s')
+        self.file_handler = logging.FileHandler('error.log')
+        self.file_handler.setFormatter(formatter)
+        logger.addHandler(self.file_handler)
+
         # Create a logging handler using a queue
         self.log_queue = queue.Queue()
         self.queue_handler = QueueHandler(self.log_queue)
-        formatter = logging.Formatter('%(asctime)s: %(message)s')
         self.queue_handler.setFormatter(formatter)
-        logger.addHandler(self.queue_handler)
+        self.logger.addHandler(self.queue_handler)
+
         # Start polling messages from the queue
         self.frame.after(100, self.poll_log_queue)
 
@@ -41,6 +50,9 @@ class ConsoleUi(object):
         self.scrolled_text.configure(state='disabled')
         # Autoscroll to the bottom
         self.scrolled_text.yview(END)
+
+        # print msg to file log
+        self.logger.debug(msg)
 
     def poll_log_queue(self):
         # Check every 100ms if there is a new message in the queue to display

@@ -11,20 +11,24 @@ https://adaascapital.com/trust-wallet-private-key/
         (thats your private_key)
 
 TODO:
-    - x button onclick close all threads
-    - infos to entries
-    - show and explain error messages
+    - save data and restart bot when connection closed
+    - multiple frames to start multiple automated bots
     - show amount of owned token and bnb to log
-    - pop up window to verify if the user really want to close the app when clicking on X button
-    - check if token is already aproved
-    - add config file to save pk and wa
-    - print errors made by instatiating Buy and Sell Objects
+    - check if token is already approved
+    - print errors made by instantiating Buy and Sell Objects
+
+TODO: Feedback
+    - tokens trowing error when getting fees maybe not bullshit ( should be optional)
 
 
 TODO LATER:
-    - stop loss and take profit seperat not both in one and if one of them set to -1 means sell all tokens
+    - some parameters should be in percentage to prevent confusion
+    - x button onclick close all threads
+    - infos to entries
+    - pop up window to verify if the user really want to close the app when clicking on X button
     - check if liquidity is locked
     - check on scanner webpage staysafu
+    - show and explain error messages
 
 - After approvement need to wait 10 second
 Error explaination:
