@@ -3,11 +3,10 @@ import threading
 import time
 from tkinter.scrolledtext import ScrolledText
 
-import requests
 from tkinter import *
 from datetime import datetime
 
-from utils.styling import BG_COLOR
+from src.utils.styling import BG_COLOR
 
 """
     For each time this class is created it:

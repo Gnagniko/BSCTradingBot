@@ -2,19 +2,19 @@ import json
 import logging
 import threading
 import tkinter
-from tkinter import Label, CENTER
+from tkinter import Label
 from tkinter import Entry
 from tkinter import Button
 from tkinter import StringVar
 from tkinter import OptionMenu
-from bots.buy import Buy
-from bots.sell import Sell
-from graphical_UIs.console_app import ConsoleUi
-from strategies_threads.buy_thread import BuyThread
-from strategies_threads.automated_thread import AutomatedThread
-from strategies_threads.channelListner_thread import ChannelListner
-from strategies_threads.sell_thread import SellThread
-from utils.styling import *
+from src.bots.buy import Buy
+from src.bots.sell import Sell
+from src.graphical_UIs.console_app import ConsoleUi
+from src.strategies_threads.buy_thread import BuyThread
+from src.strategies_threads.automated_thread import AutomatedThread
+from src.strategies_threads.channelListner_thread import ChannelListner
+from src.strategies_threads.sell_thread import SellThread
+from src.utils.styling import *
 
 """
     This class is creates parameter entries for different Bots.
@@ -262,7 +262,7 @@ class EntriesApp:
         gas_amount = None
         gas_price = None
 
-        with open("config.json") as jsonfile:
+        with open("src/config.json") as jsonfile:
             data = json.load(jsonfile)
 
             for key, value in data.items():

@@ -1,9 +1,9 @@
 import logging
 import tkinter as tk
 
-from graphical_UIs.entries_app import EntriesApp
-from graphical_UIs.console_app import ConsoleUi
-from utils.styling import *
+from src.graphical_UIs.entries_app import EntriesApp
+from src.graphical_UIs.console_app import ConsoleUi
+from src.utils.styling import *
 
 def createScrollbarFrame(frame):
 

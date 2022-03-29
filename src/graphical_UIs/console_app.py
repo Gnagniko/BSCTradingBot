@@ -2,8 +2,8 @@ import logging
 import queue
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText
-from utils.queueHandler import QueueHandler
-from utils.styling import *
+from src.utils.queueHandler import QueueHandler
+from src.utils.styling import *
 
 """
     This Class is responsible for polling

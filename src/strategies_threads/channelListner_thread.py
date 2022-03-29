@@ -11,9 +11,9 @@ from telethon.tl.types import (
     PeerChannel
 )
 
-from bots.buy import Buy
-from bots.sell import Sell
-from strategies_threads.automated_thread import AutomatedThread
+from src.bots.buy import Buy
+from src.bots.sell import Sell
+from src.strategies_threads.automated_thread import AutomatedThread
 
 """
     This class listens to a telegram Channel.
@@ -49,7 +49,7 @@ class ChannelListner(threading.Thread):
 
         self.threadLock = threadlock
 
-        with open("config.json") as jsonfile:
+        with open("src/config.json") as jsonfile:
             data = json.load(jsonfile)
 
             for key, value in data.items():
